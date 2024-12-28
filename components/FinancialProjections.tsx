@@ -1,7 +1,7 @@
 "use client"
 
 import { LineChart } from '@mui/x-charts';
-import { Box } from '@mui/material';
+import { Box, useTheme, useMediaQuery } from '@mui/material';
 
 const mockData = [
   { year: 2023, revenue: 100000, expenses: 80000, profit: 20000 },
@@ -12,31 +12,53 @@ const mockData = [
 ];
 
 export function FinancialProjections() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+
   const years = mockData.map(item => item.year);
   const revenue = mockData.map(item => item.revenue);
   const expenses = mockData.map(item => item.expenses);
   const profit = mockData.map(item => item.profit);
 
+  const chartWidth = isMobile ? 300 : isTablet ? 600 : 1000;
+  const chartHeight = isMobile ? 300 : isTablet ? 400 : 500;
+  const margin = isMobile 
+    ? { left: 50, right: 30, top: 80, bottom: 50 }  // Increased top margin for mobile
+    : { left: 100, right: 70, top: 70, bottom: 70 };
+
+  const chartColors = {
+    revenue: theme.palette.primary.main,
+    expenses: theme.palette.error.main,
+    profit: theme.palette.success.main
+  };
+
   return (
-    <Box sx={{ width: '100%', height: 600, p: 2 }}>
+    <Box sx={{ 
+      width: '100%', 
+      height: 'auto', 
+      p: isMobile ? 1 : 2,
+      display: 'flex',
+      justifyContent: 'center' 
+    }}>
       <LineChart
-        width={1000}
-        height={500}
+        width={chartWidth}
+        height={chartHeight}
         series={[
           {
             data: revenue,
             label: 'Revenue',
-            color: '#2196f3',
+            color: chartColors.revenue,
           },
           {
             data: expenses,
             label: 'Expenses', 
-            color: '#f44336',
+            color: chartColors.expenses,
           },
           {
             data: profit,
             label: 'Profit',
-            color: '#4caf50',
+            color: chartColors.profit,
           }
         ]}
         xAxis={[{
@@ -53,19 +75,22 @@ export function FinancialProjections() {
         }]}
         sx={{
           '.MuiChartsLegend-root': {
-            fontSize: 14
+            fontSize: isMobile ? 12 : 14,
+            marginTop: isMobile ? theme.spacing(2) : 0  // Add spacing for mobile legend
           }
         }}
         slotProps={{
           legend: {
-            direction: 'row',
-            position: { vertical: 'top', horizontal: 'middle' },
-            padding: 30,
-            itemGap: 50
+            direction: isMobile ? 'column' : 'row',
+            position: { 
+              vertical: isMobile ? 'top' : 'top',  // Keep legend at top but adjust margins
+              horizontal: 'middle' 
+            },
+            padding: isMobile ? 5 : 30,  // Reduced padding for mobile
+            itemGap: isMobile ? 10 : 50  // Reduced gap for mobile
           }
         }}
-        margin={{ left: 100, right: 70, top: 70, bottom: 70 }} 
-        // Increased left margin to prevent y-axis label from being cut off
+        margin={margin}
       />
     </Box>
   );
