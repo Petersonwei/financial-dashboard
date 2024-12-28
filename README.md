@@ -121,14 +121,13 @@ yarn dev
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
-MIT
+MIT License
 
 ## Contact
 - Currently looking for Front End Developer position in Brisbane/Gold Coast or Remote in Australia. If you have any feedback or job opportunities, please feel free to contact me via LinkedIn / Email!
 - **Peter Wei** | **Brisbane, QLD, Australia** | **+61 452 509 198** | **pwei.dev@gmail.com** | [**LinkedIn**](https://linkedin.com/in/peter-wei-it) | [**Portfolio**](https://my-portfolio-ruddy-alpha-30.vercel.app)
 
 
----
 Built with 💙 using Next.js and Material-UI
 
 

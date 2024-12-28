@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { TextField, Button, Box, Typography, Stack } from '@mui/material'
+import { TextField, Button, Typography, Stack } from '@mui/material'
 
 export function FinancialCalculator() {
   const [principal, setPrincipal] = useState('')
