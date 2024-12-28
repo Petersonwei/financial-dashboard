@@ -31,7 +31,8 @@ A modern, responsive financial dashboard built with Next.js and Material-UI, fea
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Theme**: Dark/Light mode with system preference support
 
-## Project Structure```
+## Project Structure
+```
 data-dashboard/
 ├── app/
 │   ├── dashboard/
@@ -44,7 +45,8 @@ data-dashboard/
 │   ├── Layout.tsx
 │   ├── ThemeToggle.tsx
 │   └── theme-provider.tsx
-└── [configuration files]```
+└── [configuration files]
+```
 
 ## Getting Started
 
@@ -119,10 +121,12 @@ yarn dev
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
-[Add your license here]
+MIT
 
 ## Contact
-[Add your contact information here]
+- Currently looking for Front End Developer position in Brisbane/Gold Coast or Remote in Australia. If you have any feedback or job opportunities, please feel free to contact me via LinkedIn / Email!
+- **Peter Wei** | **Brisbane, QLD, Australia** | **+61 452 509 198** | **pwei.dev@gmail.com** | [**LinkedIn**](https://linkedin.com/in/peter-wei-it) | [**Portfolio**](https://my-portfolio-ruddy-alpha-30.vercel.app)
+
 
 ---
 Built with 💙 using Next.js and Material-UI
