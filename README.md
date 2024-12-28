@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Financial Dashboard
+
+A modern, responsive financial dashboard built with Next.js and Material-UI, featuring interactive charts, financial insights, and a compound interest calculator. This project combines powerful data visualization with a clean, professional user interface to help users better understand their financial data.
+
+![Project Screenshot](image.png)
+![Project Screenshot](image-1.png)
+
+## Core Features
+
+### 📈 Financial Projections
+- Interactive line charts showing revenue, expenses, and profit trends
+- Responsive design with smooth animations
+- Custom tooltips and grid styling
+- Dark/Light theme support
+
+### 💡 AI-Generated Insights
+- Automated financial analysis
+- Key trend identification
+- Actionable recommendations
+
+### 🧮 Compound Interest Calculator
+- Real-time calculations
+- User-friendly input fields
+- Clear result display
+
+## Tech Stack
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **UI Library**: [Material-UI v6](https://mui.com/)
+- **Charts**: [@mui/x-charts](https://mui.com/x/react-charts/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Theme**: Dark/Light mode with system preference support
+
+## Project Structure```
+data-dashboard/
+├── app/
+│   ├── dashboard/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── FinancialProjections.tsx
+│   ├── FinancialInsights.tsx
+│   ├── FinancialCalculator.tsx
+│   ├── Layout.tsx
+│   ├── ThemeToggle.tsx
+│   └── theme-provider.tsx
+└── [configuration files]```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js (Latest LTS version recommended)
+- npm or yarn or pnpm
 
+### Installation
+
+1. Clone the repository```bash
+git clone [your-repo-url]```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features in Detail
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Financial Projections Chart
+- Multi-line chart displaying revenue, expenses, and profit
+- Custom styling and animations
+- Responsive design
+- Interactive tooltips
+- Grid customization
 
-## Learn More
+### Financial Insights
+- AI-generated analysis (currently using mock data)
+- Clean, alert-based presentation
+- Easy-to-understand format
 
-To learn more about Next.js, take a look at the following resources:
+### Compound Interest Calculator
+- Real-time calculations
+- Input validation
+- Clear result display
+- Responsive design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Implemented ✅
+- Basic dashboard layout
+- Financial projections chart
+- Theme switching functionality
+- Compound interest calculator
+- Financial insights component
+- Responsive design
 
-## Deploy on Vercel
+### Planned Features 🚀
+- [ ] Real data integration
+- [ ] User authentication
+- [ ] Data export functionality
+- [ ] More financial calculators
+- [ ] Custom chart configurations
+- [ ] API integration for real-time data
+- [ ] User preferences storage
+- [ ] PDF report generation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+[Add your license here]
+
+## Contact
+[Add your contact information here]
+
+---
+Built with 💙 using Next.js and Material-UI
+
+
+
