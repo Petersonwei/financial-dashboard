@@ -1,7 +1,7 @@
 "use client"
 
 import { LineChart } from '@mui/x-charts';
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 
 const mockData = [
   { year: 2023, revenue: 100000, expenses: 80000, profit: 20000 },
@@ -12,8 +12,6 @@ const mockData = [
 ];
 
 export function FinancialProjections() {
-  const theme = useTheme();
-
   const years = mockData.map(item => item.year);
   const revenue = mockData.map(item => item.revenue);
   const expenses = mockData.map(item => item.expenses);
@@ -22,71 +20,52 @@ export function FinancialProjections() {
   return (
     <Box sx={{ width: '100%', height: 600, p: 2 }}>
       <LineChart
-        xAxis={[{
-          data: years,
-          label: 'Year',
-          tickLabelStyle: {
-            fill: theme.palette.text.primary,
-            fontSize: 12,
-          },
-          labelStyle: {
-            fill: theme.palette.text.primary,
-            fontSize: 14,
-          },
-          scaleType: 'point',
-        }]}
-        yAxis={[{
-          label: 'Amount ($)',
-          tickLabelStyle: {
-            fill: theme.palette.text.primary,
-            fontSize: 12,
-          },
-          labelStyle: {
-            fill: theme.palette.text.primary,
-            fontSize: 14,
-          },
-          valueFormatter: (value: number) => `$${(value / 1000).toFixed(0)}k`,
-          scaleType: 'linear',
-          min: 0,
-        }]}
+        width={1000}
+        height={500}
         series={[
           {
             data: revenue,
             label: 'Revenue',
-            color: theme.palette.primary.main,
-            curve: "natural",
-            area: true,
+            color: '#2196f3',
           },
           {
             data: expenses,
-            label: 'Expenses',
-            color: theme.palette.error.main,
-            curve: "natural",
-            area: true,
+            label: 'Expenses', 
+            color: '#f44336',
           },
           {
             data: profit,
             label: 'Profit',
-            color: theme.palette.success.main,
-            curve: "natural",
-            area: true,
-          },
+            color: '#4caf50',
+          }
         ]}
-        height={550}
-        margin={{ left: 80, right: 50, top: 50, bottom: 80 }}
+        xAxis={[{
+          scaleType: 'point',
+          data: years,
+          label: 'Year'
+        }]}
+        yAxis={[{
+          label: 'Amount ($)',
+          labelStyle: {
+            transform: 'rotate(0deg)',
+            textAnchor: 'end'
+          }
+        }]}
         sx={{
           '.MuiChartsLegend-root': {
-            fontSize: 14,
-          },
+            fontSize: 14
+          }
         }}
         slotProps={{
           legend: {
             direction: 'row',
-            position: { vertical: 'bottom', horizontal: 'middle' },
+            position: { vertical: 'top', horizontal: 'middle' },
             padding: 30,
-            itemGap: 50,
-          },
+            itemGap: 50
+          }
         }}
+        margin={{ left: 100, right: 70, top: 70, bottom: 70 }} 
+        // Increased left margin to prevent y-axis label from being cut off
       />
     </Box>
   );
